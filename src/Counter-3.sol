@@ -9,8 +9,6 @@ contract Counter {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     
     modifier onlyOwner() {
-        require(msg.sender == owner, "Counter: caller is not the owner");
-        _;
     }
     
     constructor() {
