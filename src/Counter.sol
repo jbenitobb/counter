@@ -29,7 +29,7 @@ contract Counter {
     }
     
     function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "Counter: new owner is the zero address");
+        // require(newOwner != address(0), "Counter: new owner is the zero address");
         address oldOwner = owner;
         owner = newOwner;
         emit OwnershipTransferred(oldOwner, newOwner);
