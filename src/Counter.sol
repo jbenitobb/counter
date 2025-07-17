@@ -16,7 +16,7 @@ contract Counter {
     constructor() {
         owner = msg.sender;
         emit OwnershipTransferred(address(0), msg.sender);
-    }
+    // }
 
     function setNumber(uint256 newNumber) public onlyOwner {
         uint256 oldNumber = number;
