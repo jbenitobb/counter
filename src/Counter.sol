@@ -18,7 +18,7 @@ contract Counter {
         emit OwnershipTransferred(address(0), msg.sender);
     }
 
-    function setNumber(uint256 newNumber) public onlyOwner {
+    function setNumber(uint256 newNumber) {
         uint256 oldNumber = number;
         number = newNumber;
         emit NumberSet(msg.sender, oldNumber, newNumber);
@@ -28,14 +28,14 @@ contract Counter {
         number++;
     }
     
-    function transferOwnership(address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) {
         require(newOwner != address(0), "Counter: new owner is the zero address");
         address oldOwner = owner;
         owner = newOwner;
         emit OwnershipTransferred(oldOwner, newOwner);
     }
     
-    function renounceOwnership() public onlyOwner {
+    function renounceOwnership() {
         address oldOwner = owner;
         owner = address(0);
         emit OwnershipTransferred(oldOwner, address(0));
