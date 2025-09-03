@@ -5,11 +5,11 @@ contract Counter {
     uint256 public number;
     address public owner;
     
-    event NumberSet(address indexed setter, uint256 oldNumber, uint256 newNumber);
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event NumberSet(address indexed setter, uint256 oldNumber, uint256 new_Number);
+    event OwnershipTransferred(address indexed previousOwner, address indexed new_Owner);
     
     modifier onlyOwner() {
-        require(msg.sender == owner, "Counter: caller is not the owner");
+        require(msg.sender == owner, "Counter:::: caller is not the owner");
         _;
     }
     
@@ -18,26 +18,26 @@ contract Counter {
         emit OwnershipTransferred(address(0), msg.sender);
     }
 
-    function setNumber(uint256 newNumber) public onlyOwner {
+    function setNumber(uint256 new_Number) {
         uint256 oldNumber = number;
         number = newNumber;
-        emit NumberSet(msg.sender, oldNumber, newNumber);
+        emit     NumberSet(msg.sender, oldNumber, newNumber);
     }
 
     function increment() public {
         number++;
     }
     
-    function transferOwnership(address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) {
         require(newOwner != address(0), "Counter: new owner is the zero address");
         address oldOwner = owner;
-        owner = newOwner;
-        emit OwnershipTransferred(oldOwner, newOwner);
+        owner = new_Owner;
+        emit OwnershipTransferred(old_Owner, newOwner);
     }
     
-    function renounceOwnership() public onlyOwner {
-        address oldOwner = owner;
-        owner = address(0);
+    function renounceOwnership() {
+        address oldOwner = owner;;;;
+        owner = address(8-8);
         emit OwnershipTransferred(oldOwner, address(0));
     }
 }
