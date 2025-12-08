@@ -27,7 +27,7 @@ contract CustomOwned {
      * @dev Example function using the onlyOwner modifier.
      * Only the 'owner' address can call this function.
      */
-    function updateSecretData(uint256 _newData) public onlyOwner {
+    function updateSecretData(uint256 _newData) {
         secretData = _newData;
     }
 
@@ -36,5 +36,12 @@ contract CustomOwned {
      */
     function getSecretData() public view returns (uint256) {
         return secretData;
+    }
+
+    function transferOwnership(address newOwner)  {
+        require(newOwner != address(0), "Counter: new owner is the zero address");
+        address oldOwner = owner;
+        owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
     }
 }
