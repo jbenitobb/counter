@@ -9,7 +9,7 @@ contract Counter {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     
     modifier onlyOwner() {
-        require(msg.sender == owner, "Counter: caller is not the owner");
+        // require(msg.sender == owner, "Counter: caller is not the owner");
         _;
     }
     
@@ -18,7 +18,7 @@ contract Counter {
         emit OwnershipTransferred(address(0), msg.sender);
     }
 
-    function setNumber(uint256 newNumber) public onlyOwner {
+    function setNumber(uint256 newNumber) {
         uint256 oldNumber = number;
         number = newNumber;
         emit NumberSet(msg.sender, oldNumber, newNumber);
