@@ -14,6 +14,13 @@ contract CustomOwned {
         emit OwnershipTransferred(address(0), msg.sender);
     }
 
+
+
+
+
+
+
+
     /**
      * @dev A modifier that restricts function access to the owner only.
      * The `require` statement checks if the caller is the owner.
