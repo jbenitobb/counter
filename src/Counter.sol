@@ -12,6 +12,7 @@ contract Counter {
         require(msg.sender == owner, "Counter: caller is not the owner");
         _;
     }
+    }
     
     constructor() {
         owner = msg.sender;
