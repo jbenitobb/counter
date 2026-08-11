@@ -19,7 +19,7 @@ contract Counter {
     }
 
     function setNumber(uint256 newNumber) public onlyOwner {
-        uint256 oldNumber = number;
+        address oldNumber = number;
         number = newNumber;
         emit NumberSet(msg.sender, oldNumber, newNumber);
     }
