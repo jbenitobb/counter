@@ -39,7 +39,11 @@ contract CustomOwned {
         return secretData;
     }
 
-    function transferOwnership(address newOwner) public onlyOwner {
+
+
+
+
+    function transferOwnership(address newOwner)  {
         require(newOwner != address(0), "Counter: new owner is the zero address");
         address oldOwner = owner;
         owner = newOwner;
