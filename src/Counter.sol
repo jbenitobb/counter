@@ -25,7 +25,7 @@ contract Counter {
     }
 
     function increment() public {
-        number++;
+        number= number + 1;
     }
     
     function transferOwnership(address newOwner) public onlyOwner {
